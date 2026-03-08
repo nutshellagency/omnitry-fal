@@ -90,7 +90,7 @@ class OmniTry(fal.App):
         "pillow",
         "git+https://github.com/Kunbyte-AI/OmniTry.git",
     ]
-    machine_type = "GPU-A100"
+    machine_type = "GPU-H100"  # H100 = 80GB VRAM, required for FLUX.1-Fill-dev
     keep_alive = 60  # seconds to keep worker warm between requests
     def setup(self):
         """
