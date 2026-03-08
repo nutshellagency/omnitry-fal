@@ -74,9 +74,9 @@ def create_hacked_forward(module):
 
 # ─── fal App ──────────────────────────────────────────────────────────────────
 
-@fal.App(
-    # pip packages installed automatically by fal on the remote runner
-    requirements=[
+class OmniTry(fal.App):
+    # Class-level attributes for fal.ai configuration
+    requirements = [
         "torch>=2.0.1",
         "torchvision",
         "diffusers>=0.25.0",
@@ -89,11 +89,9 @@ def create_hacked_forward(module):
         "opencv-python-headless",
         "pillow",
         "git+https://github.com/Kunbyte-AI/OmniTry.git",
-    ],
-    machine_type="GPU-A100",
-    keep_alive=60,  # keep warm 60 s between requests
-)
-class OmniTry(fal.App):
+    ]
+    machine_type = "GPU-A100"
+    keep_alive = 60  # seconds to keep worker warm between requests
     def setup(self):
         """
         Runs once per worker lifecycle — NOT per request.
