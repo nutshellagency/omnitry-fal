@@ -1,0 +1,13 @@
+fal
+torch>=2.0.1
+torchvision>=0.15.2
+diffusers>=0.25.0
+transformers>=4.36.2
+accelerate>=0.26.1
+peft
+omegaconf
+safetensors
+huggingface_hub
+opencv-python-headless
+pydantic>=2
+pillow
